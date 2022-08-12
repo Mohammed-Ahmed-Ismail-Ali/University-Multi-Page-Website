@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>University Mutli Page Website</title>
+  </head>
+  <body>
+    <main>
+      <!-- Header & Landing Section -->
+      <section class="sub-header">
+        <nav>
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+          <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="course.html">Courses</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <h1>About Us</h1>
+      </section>
+      <!-- About Us Content -->
+      <section class="about-us">
+        <div class="row">
+          <div class="about-col">
+            <div class="main-heading">
+              <h1>We Are The World's Largest University</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit vitae pariatur maiores illo impedit id eos est natus, atque, modi repellendus molestias placeat, magnam quidem voluptatibus. Corrupti aspernatur suscipit explicabo facilis, non laborum eum assumenda odio? Fugit aspernatur odit cum, numquam ea quaerat natus facere!</p>  
+              <a href="#">Explore Now</a>
+            </div>
+          </div>
+          <div class="about-col">
+            <img src="./images/about.jpg" alt="">
+          </div>
+        </div>
+      </section>
+      <!-- Footer Section -->
+      <section class="footer">
+        <div class="main-heading">
+          <h4>About Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus quisquam alias eaque ipsa</br>
+            quidem provident corporis sint dolor illum perferendis!
+          </p>
+        </div>
+          <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <p>Made With <i class="fa-regular fa-heart"></i> By Mohamed El-Behery</p>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
