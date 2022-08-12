@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>University Mutli Page Website</title>
+  </head>
+  <body>
+    <main>
+      <!-- Header & Landing Section -->
+      <section class="sub-header">
+        <nav>
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+          <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="course.html">Courses</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+      </section>
+      <!-- Contact Us Content -->
+      <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.835321129478!2d31.312940914464363!3d30.098902322954252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458167b563bfaf7%3A0x6193edd79b1e8101!2sGesr%20Al%20Suez%2C%20El-Montaza%2C%20Heliopolis%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1660276574784!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+      <section class="contact-us">
+        <div class="row">
+          <div class="contact-col">
+            <div>
+              <i class="fa fa-home"></i>
+              <span>
+                <h5>Gesr Al Suez</h5>
+                <p>El-Montaza, Heliopolis, Cairo Governorate</p>
+              </span>
+            </div>
+            <div>
+              <i class="fa fa-phone"></i>
+              <span>
+                <h5>+201021141193</h5>
+                <p>Saturday To Thursday, 8AM To 6PM</p>
+              </span>
+            </div>
+            <div>
+              <i class="fa fa-envelope"></i>
+              <span>
+                <h5>dev.elbehery@gmail.com</h5>
+                <p>Email Us Your Query</p>
+              </span>
+            </div>
+          </div>
+          <div class="contact-col">
+            <form action="form-handler.php" method="post">
+              <input type="text" name="name" placeholder="Enter Your Name" required>
+              <input type="email" name="email" placeholder="Enter Your Email Address" required>
+              <input type="text" name="subject" placeholder="Enter Your Subject" required>
+              <textarea rows="8" name="message" placeholder="Enter Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- Footer Section -->
+      <section class="footer">
+        <div class="main-heading">
+          <h4>About Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus quisquam alias eaque ipsa</br>
+            quidem provident corporis sint dolor illum perferendis!
+          </p>
+        </div>
+          <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <p class="copyright">Made With <i class="fa-regular fa-heart"></i> By Mohamed El-Behery</p>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
