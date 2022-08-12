@@ -1,0 +1,643 @@
+//TODO /*-------- Index (main) Page --------*/
+//? Importing the Colors and Vars
+@use "colors" as *;
+//? Importing the General Styles, Mixins and Components
+@use "general" as *;
+
+//! Header & Landing Section
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgb(4 9 30 / 70%), rgb(4 9 30 / 70%)), url("../images/banner.png");
+  -webkit-background-image: linear-gradient(rgb(4 9 30 / 70%), rgb(4 9 30 / 70%)), url("../images/banner.png");
+  -moz-background-image: linear-gradient(rgb(4 9 30 / 70%), rgb(4 9 30 / 70%)), url("../images/banner.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+nav {
+  padding: 2% 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & img {
+    width: 150px;
+  }
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+  ul {
+    li {
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+      a {
+        color: $linksColor;
+        font-size: 13px;
+      }
+      &::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background-color: $mainColor;
+        display: block;
+        margin: auto;
+        transition: $transitionDuration;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.text-box {
+  width: 90%;
+  color: $linksColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,  -50%);
+  text-align: center;
+  h1 {
+    font-size: 62px;
+  }
+
+  p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: $linksColor;
+  }
+
+  a {
+    @include hero-button;
+    &:hover {
+      @include hero-button-hover;
+    }
+  }
+}
+
+nav{
+  i {
+    display: none;
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .text-box {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .nav-links {
+    position: absolute;
+    background-color: $mainColor;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: $transitionDurationF;
+    ul {
+      padding: 30px;
+      li {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    i {
+      display: block;
+      color: $linksColor;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+}
+}
+
+//! Courses Section
+.courses {
+  @include section;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  p {
+    @include paragraph;
+  }
+
+  .row {
+    @include row;
+    // display: flex; //TODO Anothe Method to make the boxes with flex but it will force you to do a media querie
+    // justify-content: space-between;
+    .course-col {
+      background-color: #fff1f1; //fff3f3
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      transition: $transitionDuration;
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba(0 0 0 / 0.2);
+      }
+      h3 {
+        text-align: center;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .courses {
+    h1 {
+      font-size: 28px;
+    }
+  }
+}
+
+//! Campus Section
+.campus {
+  @include section;
+  padding-top: 50px;
+  .row {
+    @include row;
+    .campus-col {
+      border-radius: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        display: block; // because the bottom border won't respect the border radius and will be shrinked
+      }
+      .layer {
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: $transitionDurationF;
+        &:hover {
+          background-color: rgba(226 0 0 / 0.7);
+        }
+        h3 {
+          text-transform: uppercase;
+          font-weight: 500;
+          color: $linksColor;
+          font-size: 26px;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+          opacity: 0;
+          transition: $transitionDurationF;
+        }
+        &:hover h3 {
+          bottom: 49%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .campus {
+    h1 {
+      font-size: 28px;
+    }
+  }
+}
+
+//! Facilities Section
+.facilities {
+  @include section;
+  .row {
+    @include row;
+    .facilities-col {
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+      transition: $transitionDurationF;
+      box-shadow: 0 0 15px 0px rgba(0 0 0 / 0.3);
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      p {
+        @include paragraph;
+        padding-left: 10px;
+      }
+      h3 {
+        margin: 16px 0 15px;
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .facilities {
+    h1 {
+      font-size: 30px;
+    }
+    .facilities-col {
+      h3 {
+        text-align: center !important;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+//! Testimonials
+.testimonials {
+  @include section;
+  .row {
+    @include row;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    .testimonials-col {
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+      background-color: #fff1f1;
+      padding: 25px;
+      // cursor: pointer;
+      display: flex;
+      img {
+        height: 40px;
+        margin: 0 30px 0 5px;
+        border-radius: 50%;
+      }
+      p {
+        @include paragraph;
+        padding: 0;
+      }
+      h3 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      .fa,
+      .fa-solid,
+      .fa-regular {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .testimonials {
+    .row {
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      .testimonials-col {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        img {
+          margin-bottom: 15px;
+        }
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 981px) {
+  .testimonials {
+    .testimonials-col {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      img {
+        margin-bottom: 15px !important;
+        height: 60px !important;
+      }
+      h3 {
+        text-align: center !important;
+      }
+      .stars {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          padding: 2px;
+        }
+      }
+    }
+  }
+}
+
+//! Call To Action Section
+.cta {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0 0 0 / 0.7), rgba(0 0 0 / 0.7)), url("../images/banner2.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+  h1 {
+    color: $linksColor;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  a {
+    @include hero-button;
+    &:hover {
+      @include hero-button-hover;
+    }
+  }
+}
+
+// Media Querie
+@media (max-width: 767px) {
+  .cta {
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+//! Footer Section
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  .icons .fa-brands {
+    color: $mainColor;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+  }
+  p {
+    color: #777;
+  }
+  .fa-heart {
+    color: $mainColor;
+  }
+}
+
+//TODO /*-------- About Us Page --------*/
+.sub-header {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4 9 30 / 0.7), rgba(4 9 30 / 0.7)), url("../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: $linksColor;
+  position: relative;
+  overflow: hidden;
+  h1 {
+    margin-top: 50px;
+    text-align: center;
+  }
+  nav {
+    padding: 2% 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & img {
+      width: 150px;
+    }
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+    ul {
+      li {
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+        a {
+          color: $linksColor;
+          font-size: 13px;
+        }
+        &::after {
+          content: '';
+          width: 0%;
+          height: 2px;
+          background-color: $mainColor;
+          display: block;
+          margin: auto;
+          transition: $transitionDuration;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  nav {
+    i {
+      display: none;
+    }
+  }
+
+// Media Querie
+@media (max-width: 767px) {
+  .nav-links {
+    position: absolute;
+    background-color: $mainColor;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: $transitionDurationF;
+    ul {
+      padding: 30px;
+      li {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    i {
+      display: block;
+      color: $linksColor;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+}
+}
+
+//! About Us Content
+.about-us {
+  @include section;
+  padding-bottom: 50px;
+  .row {
+    @include row;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 40px;
+    .about-col {
+      padding: 30px 2px;
+      h1, p{
+        text-align: left;
+      }
+      h1 {
+        padding-top: 0;
+      }
+      p {
+        padding: 15px 0 25px;
+      }
+      a {
+        float: left;
+        @include hero-button;
+        color: $mainColor;
+        border: 2px solid $mainColor;
+        font-weight: bold;
+        &:hover {
+          background-color: $mainColor;
+          color: $linksColor;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+// Media Querie
+@media (max-width: 820px) {
+  .row {
+    @include row;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    .about-col {
+      h1,p {
+        text-align: center;
+      }
+      a {
+        float: none;
+      }
+    }
+  }
+}
+}
+
+//! Blog Content
+.blog-content {
+  width: 80%;
+  margin: auto;
+  padding: 60px 0;
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }  
+  .blog-left {
+    flex-basis: 65%;
+    img {
+      width: 100%;
+    }
+    h2 {
+      color: #222;
+      font-weight: 600;
+      margin: 30px 0;
+    }
+    p {
+      color: #999;
+      padding: 0;
+    }
+  }
+  .blog-right {
+    flex-basis: 32%;
+    h3 {
+      background-color: $mainColor;
+      color: $linksColor;
+      padding: 7px 0;
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #555;
+      padding: 8px;
+    }
+  }
+  .comment-box {
+    border: 1px solid #ccc;
+    margin: 50px 0;
+    padding: 10px 20px;
+    h3 {
+      text-align: left;
+    }
+    .comment-form {
+      input,textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 15px 0;
+        border: none;
+        outline: none;
+        background-color: #f0f0f0
+      }
+    }
+    button {
+        @include hero-button;
+        color: $mainColor;
+        border: 2px solid $mainColor;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 10px 0;
+        &:hover {
+          background-color: $mainColor;
+          color: $linksColor;
+      }
+    }
+  }
+
+// Media Querie
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    .comment-form {
+      button {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}
+}

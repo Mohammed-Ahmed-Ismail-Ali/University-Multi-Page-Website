@@ -1,0 +1,73 @@
+//? Importing the Colors and Vars
+@use "colors" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+//! Mixins
+@mixin hero-button {
+    display: inline-block;
+    color: $linksColor;
+    border: 1px solid $linksColor;
+    padding: 12px 34px;
+    font-size: 13px;
+    background-color: transparent;
+    transition: $transitionDuration;
+  }
+@mixin hero-button-hover {
+      border-color: $mainColor;
+      background-color: $mainColor;
+}
+@mixin section {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+@mixin row {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+@mixin paragraph {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+//! Components
+.main-heading {
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+}
